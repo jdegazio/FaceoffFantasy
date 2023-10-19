@@ -1,0 +1,245 @@
+:root {
+  --footer-min-height: 10%; /* Adjust the value as needed */
+}
+
+.menu {
+    position: relative;
+    text-align: right;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #333;
+	position: fixed;
+	top: 0.5%;
+    right: 0.5%;
+    color: #fff;
+    padding: 0px;
+	min-width: 68px;
+	min-height: 68px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    top: 6%; /* Position the dropdown content at the top */
+    right: 0%; /* Adjust this value to align with the icon */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style for the logo image */
+.logo {
+	width: 400px;
+    height: auto; /* Maintain aspect ratio */
+    padding: 0.5%; /* Add padding for spacing if desired */
+    display: block;
+    margin: 0 auto; /* Center horizontally */
+}
+
+.top-bar {
+    background-color: #333; /* Set the background color to black */
+    color: #fff; /* Set text color to white, if needed */
+	max-height: 20%;
+	min-width: 200%;
+	align-items: center; /* Center the content vertically */
+	position: absolute;
+    left: 0;
+	top: 0;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    /* You can add more styles such as font size, font weight, etc. */
+}
+
+.footer {
+    display: flex;
+    align-items: center; /* Center the content vertically */
+    justify-content: center; /* Center the content horizontally */
+    position: absolute;
+    top: 90%; /* Position at the bottom */
+	min-width: 100%;
+	min-height: var(--footer-min-height);
+    background-color: #333; /* Background color for the footer */
+    color: #fff; /* Text color for the footer, adjust as needed */
+	border-radius: 8px;
+}
+
+.footer-content {
+    font-weight: bold;
+}
+
+.login-button {
+    padding: 10px;
+    background-color: #4f97e4;
+    color: #fff;
+    position: absolute;
+    top: 50%; /* Center vertically at 50% of the top bar's height */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    left: 30px;
+    transform: translate(0, -50%); /* Adjust the vertical position */
+}
+
+.createaccount-button {
+    padding: 10px;
+    background-color: #4f97e4;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    left: 110px;
+    transform: translate(0, -50%);
+}
+
+.top-button:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+}
+
+.landing_body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+	width: 50%;
+	position: fixed;
+    margin: 0;
+	min-width: 800px;
+}
+
+.AccountContainer {
+    background-color: #fff;
+    padding: 5%;
+    border-radius: 8px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.6);
+	max-width: 85%;
+	position: relative;
+}
+
+.cAccount-header {
+    position: relative;
+	font-size: 40px;
+    bottom: 20px; /* Adjust the top position as needed */
+	text-align: center;
+}
+
+/*
+.cAccount-form {
+	display: flex;
+    flex-direction: column;
+    position: relative;
+	min-height: 50%;
+	min-width: 94%;
+	left: 3%;
+	right: 5%;
+	bottom: 10%;
+}
+*/
+
+.cAccount-form {
+	display: flex;
+    flex-direction: column;
+    position: relative;
+	max-width: 100%;
+}
+
+form.cAccount-form input {
+	position: relative;
+	max-width: 49%;
+	bottom: 25px;
+	left: 50%;
+	height: 25px; /* Adjust the height as needed */
+}
+
+form.cAccount-form label {
+	font-weight: bold;
+	position: relative;
+}
+
+
+.welcome {
+	color: #fff;
+	font-size: 36px;
+	position: relative;
+	top: calc(50% - var(--footer-min-height));
+}
+
+.cAccountformbutton {
+    background-color: #4f97e4;
+    color: #fff;
+	border: none;
+	position:relative;
+	left: 15%;
+	height: 50px;
+	max-width: 70%;
+    border-radius: 8px;
+    cursor: pointer;
+	font-size: 24px;
+}
+
+.Landingcontainer {
+    background-color:#4f97e4;
+    border-radius: 8px;
+	min-height: 200%;
+	min-width: 125%;
+	top: 125%;
+	left: 50%;
+	position: relative;
+    display: flex;
+    align-items: center;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+	background-size: cover; /* Reduce the size to 70% of the container */
+    background-position: center; /* Center the image horizontally and vertically */
+    background-repeat: no-repeat; /* Prevent image repetition */
+	background-image: url('/static/landing.png'); /* Update the path to your background image */
+}
+
+.left {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.right {
+    flex: 1;
+    padding: 20px;
+	text-align: left;
+}
+
+.login-link {
+	position: relative;
+	left: 30%;
+	top: 20px;
+}
