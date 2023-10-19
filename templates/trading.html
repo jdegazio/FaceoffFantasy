@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faceoff Fantasy - Trading</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	<script src="https://kit.fontawesome.com/3280e9042c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<div class="top-bar">
+        <!-- Content within the black bar goes here -->
+		<!-- Logo Banner-->
+		<div class="logo-container">
+			<img src="{{ url_for('static', filename='logo.png') }}" alt="Your Logo" class="logo">
+		</div>
+		
+			<!-- Drop Down Menu in Top Right -->
+		<div class="menu">
+			<div class="dropdown">
+				<button class="dropbtn"><i class="fa-solid fa-bars" style="font-size: 24px;"></i></button>
+				<div class="dropdown-content">
+					<a href="/">Home</a>
+					<a href="/myteam">My Team</a>
+					<a href="/standings">Standings</a>
+					<a href="/livescoring">Live Scoring</a>
+					<a href="/draftroom">Draft Room</a>
+					<a href="/trading">Trading</a>
+				</div>
+			</div>
+		</div>
+    </div>
+	
+    <header>
+        <h1>Trading</h1>
+    </header>
+	<p>Implement Free Agent/Team to Team/Scratches.</p>
+
+    <script src="login.js"></script>
+	<div class="footer">
+        <div class="footer-content">
+            &copy; 2023 Faceoff Fantasy Pools | Created by Josh Degazio
+        </div>
+    </div>
+</body>
+</html>

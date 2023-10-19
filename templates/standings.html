@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faceoff Fantasy - Standings</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	<script src="https://kit.fontawesome.com/3280e9042c.js" crossorigin="anonymous"></script>
+	<style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+	<div class="top-bar">
+        <!-- Content within the black bar goes here -->
+		<!-- Logo Banner-->
+		<div class="logo-container">
+			<img src="{{ url_for('static', filename='logo.png') }}" alt="Your Logo" class="logo">
+		</div>
+		
+			<!-- Drop Down Menu in Top Right -->
+		<div class="menu">
+			<div class="dropdown">
+				<button class="dropbtn"><i class="fa-solid fa-bars" style="font-size: 24px;"></i></button>
+				<div class="dropdown-content">
+					<a href="/">Home</a>
+					<a href="/myteam">My Team</a>
+					<a href="/standings">Standings</a>
+					<a href="/livescoring">Live Scoring</a>
+					<a href="/draftroom">Draft Room</a>
+					<a href="/trading">Trading</a>
+				</div>
+			</div>
+		</div>
+    </div>
+    <h1>Standings</h1>
+    <div>
+        <label for="playerCount">Number of Players:</label>
+        <input type="number" id="playerCount" min="1" value="5">
+        <button onclick="generateStandings()">Generate Standings</button>
+    </div>
+	
+    <table id="standingsTable">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Player Name</th>
+                <th>Points</th>
+                <th>Points Earned Yesterday</th>
+            </tr>
+        </thead>
+        <tbody id="standingsBody">
+            <!-- Standings will be generated here -->
+        </tbody>
+    </table>
+	
+	
+	<div class="footer">
+        <div class="footer-content">
+            &copy; 2023 Faceoff Fantasy Pools | Created by Josh Degazio
+        </div>
+    </div>
+	
+	<script>
+        function generateStandings() {
+            const playerCount = document.getElementById('playerCount').value;
+            const standingsTable = document.getElementById('standingsTable');
+            const standingsBody = document.getElementById('standingsBody');
+
+            // Sample data (you can replace this with your actual player data)
+            const players = [];
+            for (let i = 1; i <= playerCount; i++) {
+                players.push({
+                    rank: i,
+                    name: `Player ${i}`,
+                    points: Math.floor(Math.random() * 100),
+                    pointsYesterday: Math.floor(Math.random() * 20),
+                });
+            }
+
+            // Sort players by points
+            players.sort((a, b) => b.points - a.points);
+
+            // Assign ranks
+            players.forEach((player, index) => {
+                player.rank = index + 1; // Add 1 to start ranks from 1
+            });
+
+            // Generate the standings table
+            standingsBody.innerHTML = '';
+            players.forEach((player) => {
+                const row = standingsBody.insertRow();
+                row.insertCell(0).textContent = player.rank;
+                row.insertCell(1).textContent = player.name;
+                row.insertCell(2).textContent = player.points;
+                row.insertCell(3).textContent = player.pointsYesterday;
+            });
+        }
+    </script>
+</body>
+</html>

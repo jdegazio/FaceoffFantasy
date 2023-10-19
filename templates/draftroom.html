@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faceoff Fantasy - Draftroom</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	<script src="https://kit.fontawesome.com/3280e9042c.js" crossorigin="anonymous"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+	<div class="top-bar">
+        <!-- Content within the black bar goes here -->
+		<!-- Logo Banner-->
+		<div class="logo-container">
+			<img src="{{ url_for('static', filename='logo.png') }}" alt="Your Logo" class="logo">
+		</div>
+		
+			<!-- Drop Down Menu in Top Right -->
+		<div class="menu">
+			<div class="dropdown">
+				<button class="dropbtn"><i class="fa-solid fa-bars" style="font-size: 24px;"></i></button>
+				<div class="dropdown-content">
+					<a href="/">Home</a>
+					<a href="/myteam">My Team</a>
+					<a href="/standings">Standings</a>
+					<a href="/livescoring">Live Scoring</a>
+					<a href="/draftroom">Draft Room</a>
+					<a href="/trading">Trading</a>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <h1>Draftroom</h1>
+	
+	
+    <div>
+        <label for="user">Your Team Name:</label>
+        <input type="text" id="user" placeholder="Your Team Name">
+        <button onclick="draftPlayer()">Draft Player</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Draft</th>
+            </tr>
+        </thead>
+        <tbody id="playerList">
+            <!-- Player data will be inserted here -->
+        </tbody>
+    </table>
+	
+	<div class="footer">
+        <div class="footer-content">
+            &copy; 2023 Faceoff Fantasy Pools | Created by Josh Degazio
+        </div>
+    </div>
+	
+    <script>
+        // Sample static player data (you can replace this with data from your API)
+        const players = [
+            { name: "Player 1", position: "Center", team: "Team A" },
+            { name: "Player 2", position: "Defense", team: "Team B" },
+            { name: "Player 3", position: "Left Wing", team: "Team C" },
+            // Add more player data here
+        ];
+
+        // Function to display the player list
+        function displayPlayers() {
+            const playerList = document.getElementById('playerList');
+            playerList.innerHTML = '';
+
+            players.forEach((player, index) => {
+                const row = playerList.insertRow();
+                row.insertCell(0).textContent = player.name;
+                row.insertCell(1).textContent = player.position;
+                row.insertCell(2).textContent = player.team;
+                row.insertCell(3).innerHTML = `<button onclick="draftPlayer(${index})">Draft</button>`;
+            });
+        }
+
+        // Function to draft a player
+        function draftPlayer(playerIndex) {
+            const user = document.getElementById('user').value;
+            if (user.trim() === "") {
+                alert("Please enter your team name.");
+                return;
+            }
+
+            if (playerIndex >= 0 && playerIndex < players.length) {
+                const selectedPlayer = players[playerIndex];
+                alert(`${user} drafted ${selectedPlayer.name}`);
+                // You can add logic here to remove the drafted player from the list.
+                // Example: players.splice(playerIndex, 1);
+                // Then call displayPlayers() to refresh the player list.
+            }
+        }
+
+        // Initial display of player list
+        displayPlayers();
+    </script>
+</body>
+</html>
