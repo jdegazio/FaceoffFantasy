@@ -4,41 +4,7 @@ import requests
 import re
 
 app = Flask(__name__)
-"""
-def form_data_is_valid(form_data):
-    # Perform validation checks on form data
-    username = form_data.get('newUsername')
-    email = form_data.get('newEmail')
-    password = form_data.get('newPassword')
-    confirm_password = form_data.get('confirmPassword')
 
-    # Check for specific validation criteria
-    if not username or len(username) < 3:
-        return False
-
-    if not email or not is_valid_email(email):
-        return False
-
-    if not password or len(password) < 8:
-        return False
-
-    if password != confirm_password:
-        return False
-
-    # If all checks pass, the data is valid
-    return True
-
-def is_valid_email(email):
-    # Define a regular expression pattern for a valid email address
-    email_pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
-    
-    # Use the re.match function to check if the email matches the pattern
-    if re.match(email_pattern, email):
-        return True
-    else:
-        return False
-    
-"""
 @app.route('/')
 def home():
     return render_template('home.html')
