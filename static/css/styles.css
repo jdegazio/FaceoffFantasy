@@ -141,17 +141,17 @@
 
 .AccountContainer {
     background-color: #fff;
-    padding: 5%;
+    padding: 8%;
     border-radius: 8px;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.6);
-	max-width: 85%;
+	max-width: 75%;
 	position: relative;
 }
 
 .cAccount-header {
     position: relative;
 	font-size: 40px;
-    bottom: 20px; /* Adjust the top position as needed */
+    bottom: 60px; /* Adjust the top position as needed */
 	text-align: center;
 }
 
@@ -242,4 +242,46 @@ form.cAccount-form label {
 	position: relative;
 	left: 30%;
 	top: 20px;
+}
+
+.password-requirement {
+    font-size: 12px; /* Adjust the font size as needed */
+    color: #888; /* Adjust the color to your preference */
+    margin-left: 5px; /* Add some space between the label and the requirement text */
+}
+
+.alert-container {
+    position: absolute;
+    top: 16%; /* Position it below the form*/
+	left: 0%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+	justify-content: center; /* Horizontal alignment */
+}
+
+.error-message, .verification-message, .message-graphic {
+    display: none;
+    text-align: center;
+    color: white; /* Default text color for both messages */
+    padding: 10px; /* Adjust the padding as needed for spacing */
+	width: 97.2%;
+	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.error-message {
+    background-color: red;
+    color: #8B0000;
+}
+
+.verification-message {
+    background-color: #dff0d8; /* Green background color */
+    color: #3c763d; /* Dark green text color */
+}
+
+.message-graphic {
+	background: #4f97e4;
+	display: block;
 }
