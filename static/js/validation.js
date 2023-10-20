@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorMessage = document.getElementById('error-message');
     const verificationMessage = document.getElementById('verification-message');
     const messageGraphic = document.getElementById('message-graphic');
+	const loginmessageGraphic = document.getElementById('loginmessage-graphic');
 	passwordOneInput = document.getElementById('newPassword').value;
     passwordTwoInput = document.getElementById('confirmPassword').value;
 
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		verificationMessage.style.display = 'block'; // Show the verification message
 		errorMessage.style.display = 'none'; // Hide the error message
 		messageGraphic.style.display = 'none';
+		loginmessageGraphic.style.display = 'none';
 		} else {
 			if (!usernameValid) {
 				errorMessage.innerHTML = "This username is invalid or taken.";
@@ -80,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			errorMessage.style.display = 'block'; // Show the error message
 			verificationMessage.style.display = 'none'; // Hide the verification message
 			messageGraphic.style.display = 'none';
+			loginmessageGraphic.style.display = 'none';
 		}
     });
 });
