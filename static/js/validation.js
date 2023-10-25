@@ -68,14 +68,14 @@ document.addEventListener('DOMContentLoaded', function() {
 		loginmessageGraphic.style.display = 'none';
 		} else {
 			if (!usernameValid) {
-				errorMessage.innerHTML = "This username is invalid or taken.";
+				errorMessage.innerHTML = "ERROR: Username is invalid or taken.";
 			} else if (!emailValid) {
-				errorMessage.innerHTML = "This email is invalid.";
+				errorMessage.innerHTML = "ERROR: Email is invalid.";
 			} else if (!passwordValid) {
 				if (passwordOneInput !== passwordTwoInput) {
-					errorMessage.innerHTML = "These passwords do not match.";
+					errorMessage.innerHTML = "ERROR: Passwords do not match.";
 				} else {
-					errorMessage.innerHTML = "This password is invalid or too short.";
+					errorMessage.innerHTML = "ERROR: Password is invalid or too short.";
 				}
 			}
 

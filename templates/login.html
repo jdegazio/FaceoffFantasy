@@ -6,22 +6,24 @@
 	<script src="https://kit.fontawesome.com/3280e9042c.js" crossorigin="anonymous"></script>
     <title>Faceoff Fantasy - Create Account</title>
 </head>
-<body class="landing_body">
 
-	<div class="top-bar">
-        <!-- Content within the black bar goes here -->
+<body class="default_body">
+	<!-- Header -->
+	<div class="header">
 		<a href="/" class="createaccount-button">Create Account</a>
-        <a href="/login" class="login-button">Login</a>
+		<a href="/login" class="login-button">Login</a>
 		
 		<!-- Logo Banner-->
-		<img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+		<div class="logo-container">
+			<img src="{{ url_for('static', filename='logo.png') }}" alt="Your Logo" class="logo">
+		</div>
 		
-			<!-- Drop Down Menu in Top Right -->
+		<!-- Drop Down Menu in Top Right -->
 		<div class="menu">
 			<div class="dropdown">
 				<button class="dropbtn"><i class="fa-solid fa-bars" style="font-size: 24px;"></i></button>
 				<div class="dropdown-content">
-					<a href="/">Home</a>
+					<a href="/home">Home</a>
 					<a href="/myteam">My Team</a>
 					<a href="/standings">Standings</a>
 					<a href="/livescoring">Live Scoring</a>
@@ -30,39 +32,41 @@
 				</div>
 			</div>
 		</div>
-    </div>
-
-	<div class="Landingcontainer">
-        <div class="left">
-            <h2 class="welcome">Welcome To Faceoff Fantasy&trade; Pools!</h2>
-        </div>
-        <div class="right">
-			<div class="AccountContainer">
-				<h2 class="cAccount-header">Login</h2>
-				<div class="alert-container">
-					<div id="verification-message" class="verification-message">A verification email has been sent to your email address.</div>
-					<div id="error-message" class="error-message">Please try again. Your input is invalid.</div>
-					<div id="loginmessage-graphic" class="loginmessage-graphic"></div>
-				</div>
-					<form class="cAccount-form" id="LoginForm">
-						<label for="newEmail">Email</label>
-						<input type="email" id="Email" name="Email" required>
-						<br>
-						<label for="newPassword">Password</label>
-						<input type="password" id="Password" name="Password" required>
-						<br>
-						<button class="cAccountformbutton" type="login">Login</button>
-					</form>
-				<p class="login-link">Forgot Password? <a href="/resetpass">Reset Password</a></p>
-			</div>
-		</div>
+	</div>
 		
-		<div class="footer">
-			<div class="footer-content">
-				&copy; 2023 Faceoff Fantasy Pools | Created by Josh Degazio
+	<div class='landing_body'>
+		<div class="Landingcontainer">
+			<div class="left">
+				<h2 class="welcome">Welcome To Faceoff Fantasy&trade; Pools!</h2>
+			</div>
+			<div class="right">
+				<div class="AccountContainer">
+					<h2 class="cAccount-header-text">Login</h2>
+					<div class="alert-container">
+						<div id="verification-message" class="verification-message">A verification email has been sent to your email address.</div>
+						<div id="error-message" class="error-message">Please try again. Your input is invalid.</div>
+						<div id="loginmessage-graphic" class="loginmessage-graphic"></div>
+					</div>
+						<form class="cAccount-form" id="LoginForm">
+							<label for="newEmail">Email</label>
+							<input type="email" id="Email" name="Email" required>
+							<br>
+							<label for="newPassword">Password</label>
+							<input type="password" id="Password" name="Password" required>
+							<br>
+							<button class="cAccountformbutton" type="login">Login</button>
+						</form>
+					<p class="login-link">Forgot Password? <a href="/resetpass">Reset Password</a></p>
+				</div>
+			</div>
+			
+			<div class="landing_footer">
+				<div class="footer-content">
+					&copy; 2023 Faceoff Fantasy Pools | Created by Josh Degazio
+				</div>
 			</div>
 		</div>
-    </div>
+	</div>
 
 </body>
 </html>

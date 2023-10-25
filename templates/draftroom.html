@@ -16,34 +16,35 @@
         }
     </style>
 </head>
-<body>
 
-	<div class="top-bar">
-        <!-- Content within the black bar goes here -->
+<body class='default_body'>
+	<!-- Header -->
+	<div class="header">
+		<a href="/" class="createaccount-button">Create Account</a>
+		<a href="/login" class="login-button">Login</a>
+		
 		<!-- Logo Banner-->
 		<div class="logo-container">
 			<img src="{{ url_for('static', filename='logo.png') }}" alt="Your Logo" class="logo">
 		</div>
 		
-			<!-- Drop Down Menu in Top Right -->
+		<!-- Drop Down Menu in Top Right -->
 		<div class="menu">
 			<div class="dropdown">
 				<button class="dropbtn"><i class="fa-solid fa-bars" style="font-size: 24px;"></i></button>
 				<div class="dropdown-content">
-					<a href="/">Home</a>
+					<a href="/home">Home</a>
 					<a href="/myteam">My Team</a>
 					<a href="/standings">Standings</a>
 					<a href="/livescoring">Live Scoring</a>
-					<a href="/draftroom">Draft Room</a>
 					<a href="/trading">Trading</a>
 				</div>
 			</div>
 		</div>
-    </div>
+	</div>
+
 
     <h1>Draftroom</h1>
-	
-	
     <div>
         <label for="user">Your Team Name:</label>
         <input type="text" id="user" placeholder="Your Team Name">

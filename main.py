@@ -5,11 +5,12 @@ import re
 
 app = Flask(__name__)
 
-@app.route('/')
+
+@app.route('/home')
 def home():
     return render_template('home.html')
 
-@app.route('/createaccount')
+@app.route('/')
 def createaccount():
     return render_template('createaccount.html')
 
@@ -72,6 +73,8 @@ def myteam():
             players.append(player)
 
     return render_template('myteam.html', data=players)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
