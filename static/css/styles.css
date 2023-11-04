@@ -127,9 +127,9 @@
 
 .cAccount-header-text {
     position: relative;
-	font-size: 40px;
-    bottom: 60px; /* Adjust the top position as needed */
+	font-size: 2vw;
 	text-align: center;
+	bottom: 1.5vw;
 }
 
 
@@ -187,28 +187,27 @@
 /*Containers*/
 .AccountContainer {
     background-color: #fff;
-    padding: 8%;
+    padding: 1vw;
     border-radius: 8px;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.6);
-	max-width: 75%;
+	max-width: 80%;
 	position: relative;
 }
 
 .Landingcontainer {
     background-color:#4f97e4;
     border-radius: 8px;
-	min-height: 300%;
-	min-width: 100%;
 	position: relative;
     display: flex;
-	padding: 10%;
     align-items: center;
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
 	background-size: cover; /* Reduce the size to 70% of the container */
     background-position: center; /* Center the image horizontally and vertically */
     background-repeat: no-repeat; /* Prevent image repetition */
 	background-image: url('/static/landing.png'); /* Update the path to your background image */
-	transform: translate(0, 30%); /* Adjust the vertical position */
+	top: 9vw;
+	height: 35vw;
+	width: 70vw;
 }
 
 .left {
@@ -244,6 +243,7 @@ form.cAccount-form input {
 form.cAccount-form label {
 	font-weight: bold;
 	position: relative;
+	font-size: 0.75vw;
 }
 
 .cAccountformbutton {
@@ -252,24 +252,27 @@ form.cAccount-form label {
 	border: none;
 	position:relative;
 	left: 15%;
-	height: 50px;
+	height: 3vw;
 	max-width: 70%;
     border-radius: 8px;
     cursor: pointer;
 	font-size: 24px;
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
+	bottom: 1vw;
 }
 
 .login-link {
-	position: absolute;
-	left: 28.75%;
-	bottom: 0px;
+	position: fixed;
+	top: 36.5vw;
+	left: 56.75vw;
+	font-size: 0.75vw;
 }
 
 .password-requirement {
-    font-size: 12px; /* Adjust the font size as needed */
+    font-size: 0.6vw;
     color: #888; /* Adjust the color to your preference */
     margin-left: 5px; /* Add some space between the label and the requirement text */
+	
 }
 
 .alert-container {
@@ -282,14 +285,15 @@ form.cAccount-form label {
     align-items: center;
     text-align: center; 
 	justify-content: center; /* Horizontal alignment */
+	font-size: 0.75vw;
 }
 
 .error-message, .verification-message, .message-graphic, .loginmessage-graphic {
     display: none;
     text-align: center;
     color: white; /* Default text color for both messages */
-    padding: 10px; /* Adjust the padding as needed for spacing */
-	width: 97.2%;
+	width: 100%;
+	height: 1.5vw;
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
 }
 
@@ -321,6 +325,7 @@ form.cAccount-form label {
 	color: #fff;
 	font-size: 36px;
 	position: relative;
+	transform: translate(0%, 0); /* Adjust the horizontal position */
 	top: calc(50% - var(--landing_footer-min-height));
 }
 
