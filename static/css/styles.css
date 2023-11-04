@@ -3,8 +3,6 @@
   --landing_footer-min-height: 10%; /* Adjust the value as needed */
 }
 
-
-
 /*Bodies*/
 .default_body {
     font-family: Arial, sans-serif;
@@ -12,7 +10,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-	top: 0;
+    min-width: 400px;
+    min-height: 400px;
+    top: 0;
 }
 
 .landing_body {
@@ -23,7 +23,8 @@
     height: 30%;
 	width: 50%;
     margin: 0;
-	min-width: 800px;
+	min-width: 400px;
+	min-height: 400px;
 	top: 0;
 }
 
@@ -31,6 +32,7 @@
 
 /*Menu and Content*/
 .menu {
+	bottom: 2vw;
     position: relative;
     text-align: right;
 }
@@ -42,31 +44,29 @@
 
 .dropbtn {
     background-color: #333;
-	position: fixed;
-	top: 0.5%;
-    right: 0.5%;
+	position: relative;
     color: #fff;
-    padding: 0px;
-	min-width: 68px;
-	min-height: 68px;
+	width: 3vw;
+	height: 3vw;
     border: none;
     cursor: pointer;
+	font-size: 2vw;
 }
 
 .dropdown-content {
     display: none;
     position: fixed;
-    top: 6%; /* Position the dropdown content at the top */
-    right: 0%; /* Adjust this value to align with the icon */
+    top: 6.15%;
+	right: 0%;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 6.5vw;
     z-index: 1;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
 }
 
 .dropdown-content a {
     color: #333;
-    padding: 12px 16px;
+    padding: 0.5vw 0.75vw;
     text-decoration: none;
     display: block;
 }
@@ -84,50 +84,50 @@
 /*Headers and Footers*/
 .header {
     background-color: #333; /* Set the background color to black */
-    color: #fff; /* Set text color to white, if needed */
+    color: #fff; /* Set text color to white */
 	min-width: 100%;
-	min-height: 6%;
-	align-items: center; /* Center the content vertically */
+	height: 3vw;
+	align-items: center;
 	position: absolute;
     left: 0;
 	top: 0;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
-    /* You can add more styles such as font size, font weight, etc. */
 }
 
 .footer {
     display: flex;
-    align-items: center; /* Center the content vertically */
-    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 94%; /* Position at the bottom */
 	min-width: 100%;
 	min-height: var(--footer-min-height);
-    background-color: #333; /* Background color for the footer */
-    color: #fff; /* Text color for the footer, adjust as needed */
+    background-color: #333;
+    color: #fff;
 }
 
 .landing_footer {
     display: flex;
-    align-items: center; /* Center the content vertically */
-    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 90%; /* Position at the bottom */
+    top: 90%;
 	left: 0%;
 	min-width: 100%;
 	min-height: var(--landing_footer-min-height);
-    background-color: #333; /* Background color for the footer */
-    color: #fff; /* Text color for the footer, adjust as needed */
+    background-color: #333;
+    color: #fff;
 	border-radius: 8px;
 }
 
 .footer-content {
     font-weight: bold;
+	font-size: 0.8vw;
 }
 
 .cAccount-header-text {
     position: relative;
-	font-size: 2vw;
+	font-size: 1.5vw;
 	text-align: center;
 	bottom: 1.5vw;
 }
@@ -136,7 +136,7 @@
 
 /*Header and Footer Contents */
 .login-button {
-    padding: 10px;
+    padding: 0.5vw;
     background-color: #4f97e4;
     color: #fff;
     position: absolute;
@@ -148,11 +148,11 @@
     text-decoration: none;
     transition: background-color 0.3s;
     left: 30px;
-    transform: translate(0, -50%); /* Adjust the vertical position */
+    transform: translate(0, -50%);
 }
 
 .createaccount-button {
-    padding: 10px;
+    padding: 0.5vw;
     background-color: #4f97e4;
     color: #fff;
     position: absolute;
@@ -168,14 +168,12 @@
 }
 
 .logo {
-	width: 400px;
-    height: auto; /* Maintain aspect ratio */
-	position: absolute;
-	left: 0;
-    padding: 0.5%; /* Add padding for spacing if desired */
+    width: 15vw;
+    min-height: 2vw;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0.5vw); /* Center horizontally and vertically */
     display: block;
-    margin: 0 auto; /* Center horizontally */
-	transform: translate(250%, 0); /* Adjust the horizontal position */
 }
 
 .top-button:hover {
@@ -197,14 +195,14 @@
 .Landingcontainer {
     background-color:#4f97e4;
     border-radius: 8px;
-	position: relative;
+	position: absolute;
     display: flex;
     align-items: center;
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
-	background-size: cover; /* Reduce the size to 70% of the container */
+	background-size: cover;
     background-position: center; /* Center the image horizontally and vertically */
     background-repeat: no-repeat; /* Prevent image repetition */
-	background-image: url('/static/landing.png'); /* Update the path to your background image */
+	background-image: url('/static/landing.png');
 	top: 9vw;
 	height: 35vw;
 	width: 70vw;
@@ -229,21 +227,23 @@
 	display: flex;
     flex-direction: column;
     position: relative;
-	max-width: 100%;
+	max-width: 75%;
+	font-size: 0.65vw;
+	left: 12.5%;
+	top: 10px;
 }
 
 form.cAccount-form input {
 	position: relative;
 	max-width: 49%;
-	bottom: 25px;
+	bottom: 22px;
 	left: 50%;
-	height: 25px; /* Adjust the height as needed */
 }
 
 form.cAccount-form label {
 	font-weight: bold;
 	position: relative;
-	font-size: 0.75vw;
+	font-size: 0.65vw;
 }
 
 .cAccountformbutton {
@@ -252,49 +252,49 @@ form.cAccount-form label {
 	border: none;
 	position:relative;
 	left: 15%;
-	height: 3vw;
+	height: 2.5vw;
 	max-width: 70%;
     border-radius: 8px;
     cursor: pointer;
-	font-size: 24px;
+	font-size: 1vw;
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
-	bottom: 1vw;
 }
 
 .login-link {
-	position: fixed;
-	top: 36.5vw;
-	left: 56.75vw;
-	font-size: 0.75vw;
+	position: relative;
+	font-size: 0.65vw;
+	top: 0.5vw;
+	text-align: center;
 }
 
 .password-requirement {
-    font-size: 0.6vw;
-    color: #888; /* Adjust the color to your preference */
-    margin-left: 5px; /* Add some space between the label and the requirement text */
+    font-size: 0.45vw;
+    color: #888;
+    margin-left: 5px;
 	
 }
 
 .alert-container {
-    position: absolute;
-    top: 16%; /* Position it below the form*/
-	left: 0%;
-    width: 100%;
+    position: relative;
+	right: 3.75%;
+	bottom: 2vw;
+    width: 107.5%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; 
-	justify-content: center; /* Horizontal alignment */
-	font-size: 0.75vw;
+	justify-content: center;
+	font-size: 0.65vw;
 }
 
 .error-message, .verification-message, .message-graphic, .loginmessage-graphic {
     display: none;
     text-align: center;
-    color: white; /* Default text color for both messages */
+    color: white; /* Default text color for all messages */
 	width: 100%;
 	height: 1.5vw;
+	position: relative;
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
+	line-height: 1.5vw; /* Vertically center the text */
 }
 
 .error-message {
@@ -323,11 +323,9 @@ form.cAccount-form label {
 
 .welcome {
 	color: #fff;
-	font-size: 36px;
+	font-size: 1.5vw;
 	position: relative;
-	transform: translate(0%, 0); /* Adjust the horizontal position */
+	transform: translate(0%, 0);
 	top: calc(50% - var(--landing_footer-min-height));
 }
-
-
 
